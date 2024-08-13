@@ -27,7 +27,7 @@ class Sara {
 
     move() {
         if (key === "d" || key === "D" || keyCode === RIGHT_ARROW) {
-            if (this.level[this.pcCol][this.pcFil + 1] !== 1 && this.level[this.pcCol][this.pcFil + 1] !== 4 && this.level[this.pcCol][this.pcFil + 1] !== 5 && this.level[this.pcCol][this.pcFil + 1] !== 6 && this.level[this.pcCol][this.pcFil + 1] !== undefined) {
+            if (this.level[this.pcCol][this.pcFil + 1] === 0 || this.level[this.pcCol][this.pcFil + 1] === 2 || this.level[this.pcCol][this.pcFil + 1] === 8 || this.level[this.pcCol][this.pcFil + 1] === 10) {
                 this.pcFil++
                 this.x = this.x + this.size;
                 this.d = 3;
@@ -35,21 +35,21 @@ class Sara {
         }
 
         if (key === "a" || key === "A" || keyCode === LEFT_ARROW) {
-            if (this.level[this.pcCol][this.pcFil - 1] !== 1 && this.level[this.pcCol][this.pcFil - 1] !== 4 && this.level[this.pcCol][this.pcFil - 1] !== 5 && this.level[this.pcCol][this.pcFil - 1] !== 6 && this.level[this.pcCol][this.pcFil - 1] !== undefined) {
+            if (this.level[this.pcCol][this.pcFil - 1] === 0 || this.level[this.pcCol][this.pcFil - 1] === 2 || this.level[this.pcCol][this.pcFil - 1] === 8 || this.level[this.pcCol][this.pcFil - 1] === 10) {
                 this.pcFil--
                 this.x = this.x - this.size;
                 this.d = 2;
             }
         }
         if (key === "w" || key === "W" || keyCode === UP_ARROW) {
-            if (this.level[this.pcCol - 1][this.pcFil] !== 1 && this.level[this.pcCol - 1][this.pcFil] !== 4 && this.level[this.pcCol - 1][this.pcFil] !== 5 && this.level[this.pcCol - 1][this.pcFil] !== 6 && this.level[this.pcCol - 1][this.pcFil] !== undefined) {
+            if (this.level[this.pcCol - 1][this.pcFil] === 0 || this.level[this.pcCol - 1][this.pcFil] === 2 || this.level[this.pcCol - 1][this.pcFil] === 8 || this.level[this.pcCol - 1][this.pcFil] === 10) {
                 this.pcCol--
                 this.y = this.y - this.size;
                 this.d = 1;
             }
         }
         if (key === "s" || key === "S" || keyCode === DOWN_ARROW) {
-            if (this.level[this.pcCol + 1][this.pcFil] !== 1 && this.level[this.pcCol + 1][this.pcFil] !== 4 && this.level[this.pcCol + 1][this.pcFil] !== 5 && this.level[this.pcCol + 1][this.pcFil] !== 6 && this.level[this.pcCol + 1][this.pcFil] !== undefined) {
+            if (this.level[this.pcCol + 1][this.pcFil] === 0 || this.level[this.pcCol + 1][this.pcFil] === 2 || this.level[this.pcCol + 1][this.pcFil] === 8 || this.level[this.pcCol + 1][this.pcFil] === 10) {
                 this.pcCol++
                 this.y = this.y + this.size;
                 this.d = 0;
@@ -57,7 +57,7 @@ class Sara {
         }
     }
 
-    truePos(){
+    truePos() {
         this.x = ((this.pcFil) * this.size);
         this.y = ((this.pcCol - 1) * this.size);
     }
@@ -84,6 +84,14 @@ class Sara {
 
     setCol(nCol) {
         this.pcCol = nCol;
+    }
+
+    setX(x) {
+        this.x = x;
+    }
+
+    setY(y) {
+        this.y = y;
     }
 
     getLevel() {
