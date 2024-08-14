@@ -69,7 +69,7 @@ function setup() {
 	allLevels = new ArraysLvl();
 	actualLvl = allLevels.level1;
 	player = new Sara(size, pcFil, pcCol, actualLvl, loadImage("./images/player/1.png"), loadImage("./images/player/2.png"), loadImage("./images/player/4.png"), loadImage("./images/player/3.png"))
-	screen = "game";
+	screen = "start";
 	playBtn = new Btn(loadImage("./images/others/playBtn.png"), width / 2, 900, 246, 105);
 	instructions2 = false;
 	backBtn = new Btn(loadImage("./images/others/backBtn.png"), 375, 850, 200, 60);
